@@ -6,7 +6,7 @@
 /*   By: mlarra <mlarra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 11:43:18 by mlarra            #+#    #+#             */
-/*   Updated: 2022/10/25 13:17:02 by mlarra           ###   ########.fr       */
+/*   Updated: 2022/10/25 17:29:18 by mlarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,23 @@ int main()
 	
 	try
 	{
-		Bureaucrat	a("Bureaucrat(100)", 100);;
+		Form	f2("form1", 20, 159);
+	}
+	catch(std::exception &e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+
+	try
+	{
+		Bureaucrat	a("Bureaucrat(100)", 100);
 		std::cout << a;
-		Form		fA("formA", 149, 149);
+		Form		fA("formA", 99, 149);
 		std::cout << fA;
+		fA.beSinged(a);
+		a.singForm(fA);
+		a.decrementGrade();
+		fA.beSinged(a);
 		a.singForm(fA);
 	}
 	catch(std::exception &ex)

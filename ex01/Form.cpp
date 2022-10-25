@@ -6,7 +6,7 @@
 /*   By: mlarra <mlarra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 22:50:38 by mlarra            #+#    #+#             */
-/*   Updated: 2022/10/25 16:08:02 by mlarra           ###   ########.fr       */
+/*   Updated: 2022/10/25 17:47:45 by mlarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,6 +122,6 @@ std::ostream	&operator<<(std::ostream &out, const Form &forma)
 {
 	out << "NameForm: " << forma.getName() << ", singed: " << forma.getSinged() << 
 		", gradeToSing: " << forma.getGradeToSing() << ", gradeToExecute: " << 
-		forma.getGradeToExecute() << std::endl;
+		forma.getGradeToExecute();
 	return (out);
 }

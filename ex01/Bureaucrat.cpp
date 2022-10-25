@@ -6,7 +6,7 @@
 /*   By: mlarra <mlarra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 12:55:15 by mlarra            #+#    #+#             */
-/*   Updated: 2022/10/25 12:58:43 by mlarra           ###   ########.fr       */
+/*   Updated: 2022/10/25 17:47:56 by mlarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,14 +107,14 @@ Bureaucrat::GradeTooHighException::~GradeTooHighException() throw()
 void	Bureaucrat::singForm(const Form &forma)
 {
 	if (forma.getSinged() == true)
-		std::cout << *this << " singed " << forma << std::endl;
+		std::cout << this->getName() << " singed " << forma.getName() << std::endl;
 	else
-		std::cout << *this << " couldn’t sign " << forma << " because " << 
+		std::cout << this->getName() << " couldn’t sign " << forma.getName() << " because " << 
 			forma.getName() << " don't singed" << std::endl;
 }
 
 std::ostream	&operator<<(std::ostream &out, const Bureaucrat & bur)
 {
-	out << bur.getName() << ", bureaucrat grade " << bur.getGrade() << std::endl;
+	out << bur.getName() << ", bureaucrat grade " << bur.getGrade();
 	return (out);
 }
