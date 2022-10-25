@@ -6,7 +6,7 @@
 /*   By: mlarra <mlarra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 11:43:18 by mlarra            #+#    #+#             */
-/*   Updated: 2022/10/25 11:27:13 by mlarra           ###   ########.fr       */
+/*   Updated: 2022/10/25 13:17:02 by mlarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,7 @@ int main()
 	{
 		Form	f1("form1", 0, 149);
 	}
-	catch(Form::GradeTooLowException &e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	catch(Form::GradeTooHighException &e)
+	catch(std::exception &e)
 	{
 		std::cerr << e.what() << '\n';
 	}
@@ -34,14 +30,7 @@ int main()
 		std::cout << a;
 		Form		fA("formA", 149, 149);
 		std::cout << fA;
-	}
-	catch(Bureaucrat::GradeTooLowException &e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	catch(Bureaucrat::GradeTooHighException &e)
-	{
-		std::cerr << e.what() << '\n';
+		a.singForm(fA);
 	}
 	catch(std::exception &ex)
 	{

@@ -6,7 +6,7 @@
 /*   By: mlarra <mlarra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 22:50:38 by mlarra            #+#    #+#             */
-/*   Updated: 2022/10/25 12:00:36 by mlarra           ###   ########.fr       */
+/*   Updated: 2022/10/25 13:13:25 by mlarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,13 @@ Form::GradeTooLowException::GradeTooLowException(const std::string &enterError):
 
 const char	*Form::GradeTooLowException::what() const throw()
 {
-	return ((char *) "Caught GradeTooLowException Form");
+	// return ((char *) "Caught GradeTooLowException Form");
+	std::string	temp;
+
+	temp += "GradeTooLowException ";
+	if (!m_error.empty())
+		temp += m_error;
+	return (temp.c_str());
 }
 
 Form::GradeTooLowException::~GradeTooLowException() throw()
@@ -99,7 +105,13 @@ Form::GradeTooHighException::GradeTooHighException(const std::string &enterError
 
 const char	*Form::GradeTooHighException::what() const throw()
 {
-	return ((char *) "Caught GradeTooHighException Form");
+	// return ((char *) "Caught GradeTooHighException Form");
+	std::string	temp;
+
+	temp += "GradeTooHighException ";
+	if (!m_error.empty())
+		temp += m_error;
+	return (temp.c_str());
 }
 
 Form::GradeTooHighException::~GradeTooHighException() throw()

@@ -6,7 +6,7 @@
 /*   By: mlarra <mlarra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 12:55:15 by mlarra            #+#    #+#             */
-/*   Updated: 2022/10/25 11:17:43 by mlarra           ###   ########.fr       */
+/*   Updated: 2022/10/25 12:58:43 by mlarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,13 @@ Bureaucrat::GradeTooLowException::GradeTooLowException(const std::string &errMes
 
 const char	*Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return ((char *) "Caught GradeTooLowException");
+	// return ((char *) "Caught GradeTooLowException");
+	std::string	temp;
+
+	temp += "GradeTooLowException ";
+	if (!m_error.empty())
+		temp += m_error;
+	return (temp.c_str());
 }
 
 Bureaucrat::GradeTooLowException::~GradeTooLowException() throw()
@@ -85,7 +91,13 @@ Bureaucrat::GradeTooHighException::GradeTooHighException(const char *errMesage)
 
 const char	*Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return ((char *) "Caught GradeTooHighException");
+	// return ((char *) "Caught GradeTooHighException");
+	std::string	temp;
+
+	temp += "GradeTooHighException ";
+	if (!m_error.empty())
+		temp += m_error;
+	return (temp.c_str());
 }
 
 Bureaucrat::GradeTooHighException::~GradeTooHighException() throw()
