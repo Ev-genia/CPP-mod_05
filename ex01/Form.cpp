@@ -6,7 +6,7 @@
 /*   By: mlarra <mlarra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 22:50:38 by mlarra            #+#    #+#             */
-/*   Updated: 2022/10/25 13:13:25 by mlarra           ###   ########.fr       */
+/*   Updated: 2022/10/25 16:08:02 by mlarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	Form::beSinged(const Bureaucrat &bro)
 {
 	if (bro.getGrade() < 1)
 		throw Form::GradeTooLowException("grade Bureaucrat < 1 for singed Form");
-	if (bro.getGrade() < gradeToSing)
+	if (bro.getGrade() <= gradeToSing)
 		singed = true;
 	else
 		singed = false;
