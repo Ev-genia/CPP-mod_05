@@ -6,7 +6,7 @@
 /*   By: mlarra <mlarra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 22:50:49 by mlarra            #+#    #+#             */
-/*   Updated: 2022/10/25 12:00:20 by mlarra           ###   ########.fr       */
+/*   Updated: 2022/10/25 13:19:17 by mlarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 class Bureaucrat;
 
-class Form//: public Bureaucrat
+class Form
 {
 private:
 	const std::string	name;
