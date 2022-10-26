@@ -6,7 +6,7 @@
 /*   By: mlarra <mlarra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 22:50:38 by mlarra            #+#    #+#             */
-/*   Updated: 2022/10/26 00:12:14 by mlarra           ###   ########.fr       */
+/*   Updated: 2022/10/26 12:35:11 by mlarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,11 @@ Form::GradeTooHighException::~GradeTooHighException() throw()
 void	Form::setSing(const bool enterSinged)
 {
 	singed = enterSinged;
+}
+
+void	Form::executePermitted(Bureaucrat const & bro)
+{
+	if ( )
 }
 
 std::ostream	&operator<<(std::ostream &out, const Form &forma)

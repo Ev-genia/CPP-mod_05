@@ -6,7 +6,7 @@
 /*   By: mlarra <mlarra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 22:50:49 by mlarra            #+#    #+#             */
-/*   Updated: 2022/10/25 17:48:14 by mlarra           ###   ########.fr       */
+/*   Updated: 2022/10/26 12:18:44 by mlarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,16 @@ public:
 	
 	virtual void	execute(Bureaucrat const & executor) const = 0;
 	void			setSing(const bool);
+	void			executePermitted(Bureaucrat const &);
+
+	class FormIsNotSingException: public std::exception
+	{
+	public:
+		FormIsNotSingException();
+		const char * what() const throw();
+		~FormIsNotSingException();
+	};
+	
 };
 
 std::ostream	&operator<<(std::ostream &, const Form &);
