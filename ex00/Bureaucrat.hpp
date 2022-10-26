@@ -6,7 +6,7 @@
 /*   By: mlarra <mlarra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 12:55:25 by mlarra            #+#    #+#             */
-/*   Updated: 2022/10/25 16:49:44 by mlarra           ###   ########.fr       */
+/*   Updated: 2022/10/26 17:36:19 by mlarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ public:
 	Bureaucrat();
 	Bureaucrat	&operator=(const Bureaucrat &);
 	Bureaucrat(const Bureaucrat &);
-	~Bureaucrat();
+	virtual ~Bureaucrat();
 
 	Bureaucrat(std::string, int);
 	const std::string	getName() const;
