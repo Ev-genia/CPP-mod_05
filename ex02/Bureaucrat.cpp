@@ -6,7 +6,7 @@
 /*   By: mlarra <mlarra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 12:55:15 by mlarra            #+#    #+#             */
-/*   Updated: 2022/10/26 00:11:53 by mlarra           ###   ########.fr       */
+/*   Updated: 2022/10/27 00:27:30 by mlarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ Bureaucrat::~Bureaucrat()
 Bureaucrat::Bureaucrat(std::string enterName, int enterGrade): name(enterName)
 {
 	if (enterGrade < 1)
-		throw Bureaucrat::GradeTooLowException("grade < 1");
+		throw Bureaucrat::GradeTooLowException();
 	else if (enterGrade > 150)
-		throw Bureaucrat::GradeTooHighException("grade > 150");
+		throw Bureaucrat::GradeTooHighException();
 	grade = enterGrade;
 }
 
@@ -54,18 +54,17 @@ void	Bureaucrat::incrementGrade()
 {
 	grade++;
 	if (grade > 150)
-		throw Bureaucrat::GradeTooHighException("grade then > 150");
+		throw Bureaucrat::GradeTooHighException();
 }
 
 void	Bureaucrat::decrementGrade()
 {
 	grade--;
 	if (grade < 1)
-		throw Bureaucrat::GradeTooLowException("grade then < 1");
+		throw Bureaucrat::GradeTooLowException();
 }
 
-Bureaucrat::GradeTooLowException::GradeTooLowException(const std::string &errMesage)
-															: m_error(errMesage)
+Bureaucrat::GradeTooLowException::GradeTooLowException()
 {
 }
 
@@ -78,8 +77,7 @@ Bureaucrat::GradeTooLowException::~GradeTooLowException() throw()
 {
 }
 
-Bureaucrat::GradeTooHighException::GradeTooHighException(const char *errMesage)
-															: m_error(errMesage)
+Bureaucrat::GradeTooHighException::GradeTooHighException()
 {
 }
 
@@ -95,16 +93,38 @@ Bureaucrat::GradeTooHighException::~GradeTooHighException() throw()
 void	Bureaucrat::singForm(const Form &forma)
 {
 	if (forma.getSinged() == true)
-		std::cout << *this << " singed " << forma << std::endl;
+		std::cout << this->getName() << " singed " << forma << std::endl;
 	else
-		std::cout << *this << " couldn’t sign " << forma << " because " << 
+		std::cout << this->getName() << " couldn’t sign " << forma << " because " << 
 			forma.getName() << " don't singed" << std::endl;
 }
 
 // void	executeForm(Form const & form);
+// Наконец, добавьте функцию-член executeForm(Form const & form) в Bureaucrat. Он должен попытаться выполнить форму.
+// В случае успеха напечатайте что-то вроде:
+
+// <бюрократ> казнен <форма>
+
+// Если нет, выведите явное сообщение об ошибке.
+void	Bureaucrat::executeForm(Form const & form)
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << this->getName() << " executed " << form.getName() << std::endl;
+	}
+	catch (Form::FormIsNotSingException &e)
+	{
+		std::cout << this->getName() << " couldn't execute " << form.getName() << ", because form isn't sinded" << std::endl;
+	}
+	catch (Form::GradeTooLowException &e)
+	{
+		std::cout << this->getName() << " couldn't execute " << form.getName() << ", because grade is too low" << std::endl;
+	}
+}
 
 std::ostream	&operator<<(std::ostream &out, const Bureaucrat & bur)
 {
-	out << bur.getName() << ", bureaucrat grade " << bur.getGrade();
+	out << bur.getName() << ", bureaucrat grade " << bur.getGrade() << std::endl;
 	return (out);
 }

@@ -6,7 +6,7 @@
 /*   By: mlarra <mlarra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 13:24:31 by mlarra            #+#    #+#             */
-/*   Updated: 2022/10/26 00:05:51 by mlarra           ###   ########.fr       */
+/*   Updated: 2022/10/26 17:42:36 by mlarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,11 @@ public:
 	ShrubberyCreationForm();
 	ShrubberyCreationForm	&operator=(const ShrubberyCreationForm &);
 	ShrubberyCreationForm(const ShrubberyCreationForm &);
-	~ShrubberyCreationForm();
+	virtual ~ShrubberyCreationForm();
 
 	ShrubberyCreationForm(std::string);
-	void	execute(Bureaucrat const &) const;
+	virtual void	execute(Bureaucrat const &) const;
+	void			beSinged(Bureaucrat const &);
 };
 
 

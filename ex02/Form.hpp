@@ -6,7 +6,7 @@
 /*   By: mlarra <mlarra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 22:50:49 by mlarra            #+#    #+#             */
-/*   Updated: 2022/10/26 12:18:44 by mlarra           ###   ########.fr       */
+/*   Updated: 2022/10/26 17:41:41 by mlarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,45 +31,41 @@ public:
 	Form();
 	Form	&operator=(const Form &);
 	Form(const Form &);
-	~Form();
+	virtual ~Form();
 
 	Form(const std::string, const int, const int);
 	const std::string	getName() const;
 	bool				getSinged() const;
 	const int			getGradeToSing() const;
 	const int			getGradeToExecute() const;
-	void				beSinged(const Bureaucrat &);
+	virtual void		beSinged(const Bureaucrat &);
 
 	class GradeTooLowException: public std::exception
 	{
-	private:
-		std::string	m_error;
 	public:
-		GradeTooLowException(const std::string &);
+		GradeTooLowException();
 		const char	*what() const throw();
 		~GradeTooLowException() throw();
 	};
 	
 	class GradeTooHighException: public std::exception
 	{
-	private:
-		std::string	m_error;
 	public:
-		GradeTooHighException(const std::string &);
+		GradeTooHighException();
 		const char* what() const throw();
 		~GradeTooHighException() throw();
 	};
 	
 	virtual void	execute(Bureaucrat const & executor) const = 0;
 	void			setSing(const bool);
-	void			executePermitted(Bureaucrat const &);
+	void			executePermitted(Bureaucrat const &) const;
 
 	class FormIsNotSingException: public std::exception
 	{
 	public:
 		FormIsNotSingException();
 		const char * what() const throw();
-		~FormIsNotSingException();
+		~FormIsNotSingException() throw();
 	};
 	
 };

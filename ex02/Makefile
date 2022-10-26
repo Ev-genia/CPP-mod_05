@@ -6,17 +6,19 @@
 #    By: mlarra <mlarra@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/06 11:54:51 by mlarra            #+#    #+#              #
-#    Updated: 2022/10/26 00:11:04 by mlarra           ###   ########.fr        #
+#    Updated: 2022/10/27 00:26:05 by mlarra           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	ex02
 
-SRCS	=	main.cpp	Bureaucrat.cpp	Form.cpp	ShrubberyCreationForm.cpp
+SRCS	=	main.cpp	Bureaucrat.cpp	Form.cpp	ShrubberyCreationForm.cpp\
+			RobotomyRequestForm.cpp
 
 OBJS	=	${SRCS:.cpp=.o}
 
-HEADER	=	Bureaucrat.hpp	Form.hpp	ShrubberyCreationForm.hpp
+HEADER	=	Bureaucrat.hpp	Form.hpp	ShrubberyCreationForm.hpp\
+			RobotomyRequestForm.hpp
 
 CC		=	c++
 
