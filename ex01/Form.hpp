@@ -6,7 +6,7 @@
 /*   By: mlarra <mlarra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 22:50:49 by mlarra            #+#    #+#             */
-/*   Updated: 2022/10/25 16:49:53 by mlarra           ###   ########.fr       */
+/*   Updated: 2022/10/26 17:36:42 by mlarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ public:
 	Form();
 	Form	&operator=(const Form &);
 	Form(const Form &);
-	~Form();
+	virtual ~Form();
 
 	Form(const std::string, const int, const int);
 	const std::string	getName() const;
