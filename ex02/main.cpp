@@ -6,7 +6,7 @@
 /*   By: mlarra <mlarra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 11:43:18 by mlarra            #+#    #+#             */
-/*   Updated: 2022/10/27 00:28:50 by mlarra           ###   ########.fr       */
+/*   Updated: 2022/10/27 10:03:33 by mlarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "Form.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main()
 {
@@ -84,6 +85,31 @@ int main()
 	{
 		std::cerr << ex.what() << '\n';
 	}
-
+	std::cout << "==6==" << std::endl;
+	try
+	{
+		Bureaucrat	g("Bureaucrat(7)", 7);
+		std::cout << g;
+		PresidentialPardonForm	berryg("dog");
+		berryg.beSinged(g);
+		g.executeForm(berryg);
+	}
+	catch(std::exception &ex)
+	{
+		std::cerr << ex.what() << '\n';
+	}
+	std::cout << "==7==" << std::endl;
+	try
+	{
+		Bureaucrat	k("Bureaucrat(3)", 3);
+		std::cout << k;
+		PresidentialPardonForm	berryk("bird");
+		berryk.beSinged(k);
+		k.executeForm(berryk);
+	}
+	catch(std::exception &ex)
+	{
+		std::cerr << ex.what() << '\n';
+	}
 	return 0;
 }

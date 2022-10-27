@@ -6,19 +6,19 @@
 #    By: mlarra <mlarra@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/06 11:54:51 by mlarra            #+#    #+#              #
-#    Updated: 2022/10/27 00:26:05 by mlarra           ###   ########.fr        #
+#    Updated: 2022/10/27 10:03:13 by mlarra           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	ex02
 
 SRCS	=	main.cpp	Bureaucrat.cpp	Form.cpp	ShrubberyCreationForm.cpp\
-			RobotomyRequestForm.cpp
+			RobotomyRequestForm.cpp	PresidentialPardonForm.cpp
 
 OBJS	=	${SRCS:.cpp=.o}
 
 HEADER	=	Bureaucrat.hpp	Form.hpp	ShrubberyCreationForm.hpp\
-			RobotomyRequestForm.hpp
+			RobotomyRequestForm.hpp		PresidentialPardonForm.hpp
 
 CC		=	c++
 
@@ -38,5 +38,6 @@ clean	:
 
 fclean	:	clean
 			${RM} ${NAME}
+			${RM} *_shrubbery
 
 re		:	fclean all
