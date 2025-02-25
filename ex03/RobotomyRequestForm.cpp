@@ -6,7 +6,7 @@
 /*   By: mlarra <mlarra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 13:28:30 by mlarra            #+#    #+#             */
-/*   Updated: 2022/10/27 00:22:42 by mlarra           ###   ########.fr       */
+/*   Updated: 2022/10/27 12:52:04 by mlarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	RobotomyRequestForm::execute(Bureaucrat const & broExec) const
 	executePermitted(broExec);
 
 	std::cout << "I'm a DRRRRRRRRRRill" << std::endl;
+	std::srand(time(0));
 	if (std::rand() % 2)
 		std::cout << target << " has been robotomized successfully " << std::endl;
 	else
